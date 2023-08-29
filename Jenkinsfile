@@ -5,7 +5,7 @@ pipeline {
         stage('CloudFormation Provision') {
             steps {
 
-                sh "aws cloudformation deploy --template-file --stack-name nadeemstack --parameter-overrides Environment=prod"
+                sh "aws cloudformation deploy --template-file parent-stack.yaml --stack-name nadeemstack --parameter-overrides Environment=dev"
             }
         }
     }
